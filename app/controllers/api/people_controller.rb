@@ -1,6 +1,8 @@
 module Api
   class PeopleController < ApplicationController
 
+    skip_before_action :verify_authenticity_token
+
     def index
       @people = Person.order("id")
     end
