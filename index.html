@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+<head>
+
+</head>
+<body>
+<% if card.image.extension == "pdf" %>
+<iframe src="https://mobidecks-staging.s3.amazonaws.com/uploads/card/image/6/untitled_drawing.pdf" width="100px" height="200px"></iframe>
+<% else %>
+<%= image_tag "" %>
+<% end %>
+</body>
+</html>

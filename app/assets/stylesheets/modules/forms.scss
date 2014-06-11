@@ -1,0 +1,35 @@
+.error-messages {
+  color: red;
+  margin-bottom: 1em;
+}
+
+.field-with-errors {
+  label {
+    color: red;
+  }
+
+  input[type=text] {
+    border: 1px solid red;
+  }
+}
+
+.form-label {
+  display: inline-block;
+  width: 140px;
+}
+
+.form-row {
+  margin-bottom: .5em;
+
+  * {
+    vertical-align: top;
+  }
+}
+
+.create-form {
+  margin-bottom: 2em;
+}
+
+.form-button {
+  margin-left: 144px;
+}

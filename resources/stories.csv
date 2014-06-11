@@ -1,0 +1,37 @@
+Id,Story,Labels,Iteration,Iteration Start,Iteration End,Story Type,Estimate,Current State,Created at,Accepted at,Deadline,Requested By,Description,URL,Owned By,Task,Task Status,Task,Task Status,Task,Task Status,Task,Task Status,Task,Task Status
+73018148,user can view all people on the index page,"",1,"Jun 9, 2014","Jun 15, 2014",feature,1,unstarted,"Jun 10, 2014",,,Jeff Dean,"when a user goes to /
+they should see a list of people on the index page
+for each person, show the first name and last name and address
+",https://www.pivotaltracker.com/story/show/73018148,,run rake db:seed to create two people in the database,not completed,write code that makes an ajax request to /people,not completed,write an ejs template for the person object,not completed,write code that parses the response and appends DOM for each person,not completed
+72894812,user can create a person with valid attributes,"",1,"Jun 9, 2014","Jun 15, 2014",feature,1,unstarted,"Jun 9, 2014",,,Jeff Dean,"user goes to the home page
+they fill in the first name, last name and address
+when they click ""Create Person"", a new person div should be added to the list
+and the person should be created in the database
+and the form should be reset (so the fields are blank again)",https://www.pivotaltracker.com/story/show/72894812,,write an ejs form for the new form,not completed,write javascript that intercepts the submit button,not completed,"create a JSON object from the form fields, and POST that to the server",not completed,"on a successful response, add that new person to the list of people in the DOM",not completed
+72894822,user can update a person with valid attributes,"",1,"Jun 9, 2014","Jun 15, 2014",feature,1,unstarted,"Jun 9, 2014",,,Jeff Dean,"user goes to the homepage and sees a list of people
+each person has an edit link
+clicking the edit link replaces the show view with the edit form, with the fields pre-filled in with the person's data
+filling out the edit form with valid data and clicking ""Update Person"" should update the person on the server, and replace the edit form with the show view for the updated person",https://www.pivotaltracker.com/story/show/72894822,,add an edit link to the person ejs template,not completed,add a click handler for the edit link that replaces the show view with the edit view,not completed,add an ejs template for the edit form,not completed,add a submit handler for the form that forms a JSON request and sends it via PATCH to the server,not completed,write a handler that replaces the edit form with the show form on success,not completed
+72894830,user can cancel the update of a person,"",1,"Jun 9, 2014","Jun 15, 2014",feature,1,unstarted,"Jun 9, 2014",,,Jeff Dean,"user clicks the edit button on a person
+when the edit form shows, user can click a cancel link
+when the cancel link is clicked, it replaces the edit form with the show view
+
+NOTE:
+if the user makes any edits on the update form, and clicks ""cancel"", the ""show"" view should reflect the _original_ values, and if they click ""edit"" again, the form should be pre-populated with the _original_ values.",https://www.pivotaltracker.com/story/show/72894830,,add a cancel link to the edit ejs template,not completed,add a click handler to capture the click on the cancel link,not completed,no need to make ajax requests - just add / remove the correct divs,not completed
+72894840,user can delete a person,"",1,"Jun 9, 2014","Jun 15, 2014",feature,1,unstarted,"Jun 9, 2014",,,Jeff Dean,"user clicks ""edit"" and sees the edit form for a person
+user clicks a delete link
+the person should be deleted from the server
+and the person's div should be removed from the page
+",https://www.pivotaltracker.com/story/show/72894840,,add a delete link to the edit person ejs template,not completed,add a click handler for the delete link,not completed,"make a DELETE request and when it's done, remove that whole element from the DOM",not completed
+73018158,user sees validation messages when the person could not be created,"",1,"Jun 9, 2014","Jun 15, 2014",feature,1,unstarted,"Jun 10, 2014",,,Jeff Dean,"user clicks ""create"" without filling in any fields
+they should see error messages
+and they should see the fields that have error messages in red
+
+Once error messages are showing, and the user fills out fields correctly, the error messages should go away, and fields should return to their original color",https://www.pivotaltracker.com/story/show/73018158,
+73018162,user sees validation messages when the person could not be updated,"",1,"Jun 9, 2014","Jun 15, 2014",feature,1,unstarted,"Jun 10, 2014",,,Jeff Dean,"user clicks ""edit"" on a person and removes the first or last name and clicks ""update""
+the user should see error messages just like the create form
+
+if the user edits multiple people at once, updating one should not affect the others",https://www.pivotaltracker.com/story/show/73018162,
+73018216,"when user deletes a person, they should be prompted","",1,"Jun 9, 2014","Jun 15, 2014",feature,1,unstarted,"Jun 10, 2014",,,Jeff Dean,"when the user clicks the delete link, a confirmation dialog should pop up that says ""Are you sure?""
+if they choose ""OK"", the person should be deleted
+if they choose ""cancel"" the person should not be deleted",https://www.pivotaltracker.com/story/show/73018216,

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Manager</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="/" class="nav">Contact Manager</a>
+    <a href="/styles" class="nav">Styleguide</a>
+  </div>
+</header>
+
+<main>
+
+  <div class="container">
+    <h1>Styleguide</h1>
+
+    <section class="style-section">
+      <h2>Forms</h2>
+
+      <form action="#" class="create-form">
+
+        <div class="form-row">
+          <label class="form-label">Some Field</label>
+          <input type="text" class="form-control">
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Some Long Field </label>
+          <textarea class="form-control"></textarea>
+        </div>
+
+        <input type="submit" value="Some Button" class="form-button">
+      </form>
+    </section>
+    <section class="style-section">
+
+      <h2>Forms w/ Validation Messages</h2>
+
+      <form action="#" class="create-form">
+        <div class="error-messages">
+          <ul>
+            <li>Some field can't be blank</li>
+          </ul>
+        </div>
+
+        <div class="form-row field-with-errors">
+          <label class="form-label">Some Field</label>
+          <input type="text" class="form-control">
+        </div>
+
+        <div class="form-row field-with-errors">
+          <label class="form-label">Some Long Field </label>
+          <textarea class="form-control"></textarea>
+        </div>
+
+        <input type="submit" value="Some Button" class="form-button">
+      </form>
+    </section>
+    <section class="style-section">
+
+      <h2>Simple show view</h2>
+
+      <div class="person">
+        <div class="actions">
+          <a href="#">edit</a>
+        </div>
+
+        Some Name
+
+        <blockquote>
+          Some other attribute
+        </blockquote>
+      </div>
+    </section>
+    <section class="style-section">
+
+      <h2>Edit View</h2>
+
+      <div class="person">
+        <div class="person-edit">
+          <div class="actions">
+            <a href="#">delete</a> |
+            <a href="#">cancel</a>
+          </div>
+
+          <form action="#">
+            <div class="form-row">
+              <label class="form-label">Some Field</label>
+              <input type="text" class="form-control">
+            </div>
+
+            <div class="form-row">
+              <label class="form-label">Some Long Field </label>
+              <textarea class="form-control"></textarea>
+            </div>
+
+            <input type="submit" value="Some Button" class="form-button">
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+</body>
+</html>

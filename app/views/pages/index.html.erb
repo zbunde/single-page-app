@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Manager</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="/" class="nav">Contact Manager</a>
+    <a href="/styles" class="nav">Styleguide</a>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div data-container="main"></div>
+    <h2>All People</h2>
+    <div data-container="people"></div>
+  </div>
+</main>
+
+<%= javascript_include_tag 'application' %>
+</body>
+</html>

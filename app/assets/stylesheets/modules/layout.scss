@@ -1,0 +1,28 @@
+header {
+  background-color: #0B486B;
+}
+
+a.nav {
+  color: #CFF09E;
+  display: inline-block;
+  padding-right: .5em;
+  text-decoration: none;
+
+  & + & {
+    border-left: 1px solid #CFF09E;
+  }
+
+  & ~ & {
+    padding-left: .5em;
+  }
+}
+
+.container {
+  padding: 1em;
+}
+
+section.style-section {
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
