@@ -91,4 +91,26 @@ feature 'The one-page contact manager app' do
     end
   end
 
+  scenario 'User deletes a person', js: true do
+    Person.create!(
+      first_name: "Joe",
+      last_name: "Example",
+      address: "15 Main St"
+    )
+
+    visit '/'
+    expect(page).to have_content("Joe Example")
+    expect(page).to have_content("15 Main St")
+
+    click_on "edit"
+    click_on "delete"
+    page.driver.browser.switch_to.alert.accept
+    expect(page).to have_no_content("Joe Example")
+    expect(page).to have_no_content("15 Main St")
+
+    visit page.current_url
+    expect(page).to have_no_content("Joe Example")
+    expect(page).to have_no_content("15 Main St")
+  end
+
 end

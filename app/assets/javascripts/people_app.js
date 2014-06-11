@@ -16,6 +16,7 @@ window.PeopleApp = {
     $.getJSON(path, this.renderInitialPage);
     $(document).on("submit", "[data-behavior=create-person]", this.didSubmitPersonCreateForm.bind(this));
     $(document).on("submit", "[data-behavior=update-person]", this.didSubmitPersonUpdateForm.bind(this));
+    $(document).on("click", "[data-behavior=delete-person]", this.didClickDeleteLink);
     $(document).on("click", "[data-behavior=edit-person]", this.didClickEditLink);
     $(document).on("click", "[data-behavior=cancel-edit]", this.didClickCancelEditLink);
   },
@@ -108,6 +109,28 @@ window.PeopleApp = {
     jqxhr.fail(function (xhr) {
       this.personWasNotSaved(event.target, xhr.responseJSON);
     }.bind(this));
+  },
+
+  // This function is called when a person clicks the delete link for a person
+  // It is responsible for:
+  //
+  //  * asking the user to confirm whether or not they really want to delete the person
+  //  * sending a DELETE request to the server
+  //  * setting up the callbacks that will be triggered when the server returns a 200 OK
+  //  * NOTE: we don't normally expect a failure case on delete, so we don't explicitly handle the error out of laziness
+  //
+  didClickDeleteLink: function (event) {
+    if (confirm("Are you sure?")) {
+      var jqxhr = $.ajax({
+        type: "DELETE",
+        url: event.target.href
+      });
+
+      jqxhr.done(function () {
+        $(event.target).closest(".person").remove();
+      });
+    }
+    return false;
   },
 
   // This function is called when a person clicks the edit link for a person
