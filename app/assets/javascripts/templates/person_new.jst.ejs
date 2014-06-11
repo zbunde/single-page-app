@@ -1,0 +1,20 @@
+<form action="<%= url %>" data-behavior="create-person" class="create-form">
+  <div data-container="errors"></div>
+
+  <div class="form-row">
+    <label class="form-label" for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" value="<%= first_name %>" class="form-control"/>
+  </div>
+
+  <div class="form-row">
+    <label class="form-label" for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" value="<%= last_name %>" class="form-control"/>
+  </div>
+
+  <div class="form-row">
+    <label class="form-label" for="address">Address:</label>
+    <textarea name="address" class="form-control" id="address"><%= address %></textarea>
+  </div>
+
+  <input type="submit" value="Create Person" class="form-button"/>
+</form>
