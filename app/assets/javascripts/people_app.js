@@ -17,6 +17,7 @@ window.PeopleApp = {
     $(document).on("submit", "[data-behavior=create-person]", this.didSubmitPersonCreateForm.bind(this));
     $(document).on("submit", "[data-behavior=update-person]", this.didSubmitPersonUpdateForm.bind(this));
     $(document).on("click", "[data-behavior=edit-person]", this.didClickEditLink);
+    $(document).on("click", "[data-behavior=cancel-edit]", this.didClickCancelEditLink);
   },
 
   // This function is called with data from GET /people
@@ -118,6 +119,19 @@ window.PeopleApp = {
   didClickEditLink: function (event) {
     var $html = JST['templates/person_edit']($(event.target).closest(".person").data('person'));
     $(event.target).closest(".person").html($html);
+    return false;
+  },
+
+  // This function is called when a person clicks the cancel link after clicking "edit" on a person
+  // It is responsible for:
+  //
+  //  * replacing the person's edit form with the "show" div for that person
+  //  * making sure that the new "show" div has a reference to the JSON for that person
+  //
+  didClickCancelEditLink: function (event) {
+    var $html = $(JST['templates/person_show']($(event.target).closest(".person").data('person')));
+    $html.data('person', $(event.target).closest(".person").data('person'));
+    $(event.target).closest(".person").replaceWith($html);
     return false;
   },
 
